@@ -15,7 +15,7 @@ The solution includes an end-to-end ETL pipeline, robust data cleansing, and an 
 -   "scripts/": Python scripts and Jupyter notebook used for data transformation and analysis.
 -   "sql/": SQL scripts for data cleansing and database interactions.
 -   "ETL POWER MAIN.pbix": The Power BI project file containing the data model and dashboard design.
--   
+
 ### Technologies & Tools
 
 -   Data Processing: Python (Pandas), SQL, Jupyter Notebook
