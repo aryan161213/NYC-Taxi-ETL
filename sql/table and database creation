@@ -1,0 +1,68 @@
+-- Database: postgres
+
+-- DROP DATABASE IF EXISTS postgres;
+
+CREATE DATABASE postgres
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    LOCALE_PROVIDER = 'libc'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+COMMENT ON DATABASE postgres
+    IS 'default administrative connection database';
+
+
+-- Table: public.nyc_cleaned
+
+-- DROP TABLE IF EXISTS public.nyc_cleaned;
+
+CREATE TABLE IF NOT EXISTS public.nyc_cleaned
+(
+    old_tpep_pickup_datetime timestamp without time zone,
+    "Company_Serve" text COLLATE pg_catalog."default",
+    old_tpep_dropoff_datetime timestamp without time zone,
+    passenger_count double precision,
+    trip_distance double precision,
+    "RatecodeID" double precision,
+    "PULocationID" bigint,
+    "DOLocationID" bigint,
+    payment_type bigint,
+    fare_amount double precision,
+    extra double precision,
+    mta_tax double precision,
+    tip_amount double precision,
+    tolls_amount double precision,
+    improvement_surcharge double precision,
+    total_amount double precision,
+    congestion_surcharge double precision,
+    airport_fee double precision,
+    drop_year bigint,
+    trip_duration double precision,
+    short_distance bigint,
+    total_taxes double precision,
+    "BoroughPickup" text COLLATE pg_catalog."default",
+    "PickupZone" text COLLATE pg_catalog."default",
+    "PickupServiceZone" text COLLATE pg_catalog."default",
+    "BoroughDropoff" text COLLATE pg_catalog."default",
+    "DropoffZone" text COLLATE pg_catalog."default",
+    "DropoffServiceZone" text COLLATE pg_catalog."default",
+    "RateCodeDesc" text COLLATE pg_catalog."default",
+    "PaymentDesc" text COLLATE pg_catalog."default",
+    trip_type text COLLATE pg_catalog."default",
+    "Fare_per_mile" double precision,
+    tpep_pickup_date date,
+    pickup_time time without time zone,
+    tpep_dropoff_date date,
+    tpep_dropoff_time time without time zone,
+    ride_month character varying(20) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.nyc_cleaned
+    OWNER to postgres;
